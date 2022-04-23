@@ -5,11 +5,40 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Encrypto</title>
 </head>
 
 <body>
+  <!-- Header -->
+  <header>
+    <a href="index.html">
+      <h1>Encrypto</h1>
+    </a>
+    <p>A project that has been built as an implementation for the study "Name of the study" that accomplished by "Name
+      of the
+      researcher".</p>
+  </header>
+  <!-- /Header -->
+
+  <!-- Encryption form -->
+  <div class="encryption">
+    <form class="encryption-form" action="index.html">
+      <div class="">
+        <input class="encryption-input" type="text" placeholder="Put the text or encrypted text here...">
+        <select name="encryption-options">
+          <option value="encrypt">Encrypt</option>
+          <option value="decrypt">Decrypt</option>
+        </select>
+      </div>
+      <div class="encryption-output"></div>
+      <input class="encryption-button" type="submit" value="Submit">
+    </form>
+  </div>
+  <!-- /Encryption form -->
 
   <script src="app.js"></script>
 </body>
