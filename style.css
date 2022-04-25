@@ -13,6 +13,14 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   background: #2980b9;
   color: #FFFDFA;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 header {
@@ -35,43 +43,41 @@ header p {
 }
 
 .encryption {
+  position: relative;
   height: 300px;
-  text-align: center;
-}
-
-.encryption-form {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  padding-top: 3rem;
 }
 
-.encryption-input {
-  height: 3rem;
-  border-radius: .5rem;
+.encryption::before {
+  position: absolute;
+  content: '';
+  width: 50%;
+  height: 0.25rem;
+  border-radius: 50rem;
+  background: #FFFDFA;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.encryption h2 {
   margin-bottom: 1rem;
-  border: none;
-  padding: 0 .5rem;
 }
 
-.encryption-input:focus {
+.encryption .encryption-container,
+.encryption .decryption-container {
+  width: 50%;
+  padding: 0 1.5rem;
+}
+
+.encryption input {
+  padding: 1rem 0.5rem;
+  width: 80%;
+  display: block;
+}
+
+.encryption input:focus {
   outline: none;
-}
-
-.encryption-output {
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
-  font-style: italic;
-}
-
-.encryption-output span {
-  font-weight: bold;
-}
-
-.encryption-button {
-  padding: .5rem 1.5rem;
-  font-size: 18px;
-  font-weight: bold;
-  background: #ecf0f1;
-  border: none;
 }

@@ -15,30 +15,28 @@
 <body>
   <!-- Header -->
   <header>
-    <a href="index.html">
-      <h1>Encrypto</h1>
-    </a>
-    <p>A project that has been built as an implementation for the study "Name of the study" that accomplished by "Name
-      of the
-      researcher".</p>
+    <div class="container">
+      <a href="index.html">
+        <h1>Encrypto</h1>
+      </a>
+      <p>A project that has been built as an implementation for the study "Name of the study" that accomplished by "Name
+        of the
+        researcher".</p>
+    </div>
   </header>
   <!-- /Header -->
-
-  <!-- Encryption form -->
-  <div class="encryption">
-    <form class="encryption-form" action="index.html">
-      <div class="">
-        <input class="encryption-input" type="text" placeholder="Put the text or encrypted text here...">
-        <select class="encryption-options">
-          <option value="encrypt" selected>Encrypt</option>
-          <option value="decrypt">Decrypt</option>
-        </select>
+  <div class="container">
+    <div class="encryption">
+      <div class="encryption-container">
+        <h2>String Encryption</h2>
+        <input type="text" class="encryption-input" placeholder="Please enter a text you want to encrypt...">
       </div>
-      <div class="encryption-output"></div>
-      <input class="encryption-button" type="submit" value="Convert">
-    </form>
+      <div class="decryption-container">
+        <h2>String Decryption</h2>
+        <input type="text" class="decryption-input" placeholder="Please enter a text you want to decrypt...">
+      </div>
+    </div>
   </div>
-  <!-- /Encryption form -->
 
   <script src="app.js"></script>
 </body>
