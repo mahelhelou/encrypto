@@ -1,29 +1,51 @@
+/**
+ * UX Improvements
+ * 1. Show encrypted or decrypted string ONLY once
+ */
+
 // UI elements
 const encryptionForm = document.querySelector('.encryption-form')
 const encryptionInput = document.querySelector('.encryption-input')
 const encryptionBtn = document.querySelector('.encryption-button')
 const encryptionOutput = document.querySelector('.encryption-output')
 
-// Encrypt the string
-const cipher = salt => {
-	const textToChars = text => text.split('').map(c => c.charCodeAt(0))
-	const byteHex = n => ('0' + Number(n).toString(16)).substr(-2)
-	const applySaltToChar = code => textToChars(salt).reduce((a, b) => a ^ b, code)
+/**
+ * Functions
+ * 1. Encrypt the string
+ * 2. Decrypt the string
+ */
+function cipher(salt) {
+	function textToChars(text) {
+		return text.split('').map(c => c.charCodeAt(0))
+	}
+
+	function byteHex(n) {
+		return ('0' + Number(n).toString(16)).substr(-2)
+	}
+
+	function applySaltToChar(code) {
+		return textToChars(salt).reduce((a, b) => a ^ b, code)
+	}
 
 	return text => text.split('').map(textToChars).map(applySaltToChar).map(byteHex).join('')
 }
 
-// Decrypt the string
-const decipher = salt => {
-	const textToChars = text => text.split('').map(c => c.charCodeAt(0))
-	const applySaltToChar = code => textToChars(salt).reduce((a, b) => a ^ b, code)
-	return encoded =>
-		encoded
+function decipher(salt) {
+	function textToChars(text) {
+		return text.split('').map(c => c.charCodeAt(0))
+	}
+
+	function applySaltToChar(code) {
+		return textToChars(salt).reduce((a, b) => a ^ b, code)
+	}
+	return function (encoded) {
+		return encoded
 			.match(/.{1,2}/g)
 			.map(hex => parseInt(hex, 16))
 			.map(applySaltToChar)
 			.map(charCode => String.fromCharCode(charCode))
 			.join('')
+	}
 }
 
 /**
@@ -38,30 +60,20 @@ encryptionForm.addEventListener('submit', e => {
 
 	const encryptionSelect = document.querySelector('.encryption-options')
 	let encryptionOption = encryptionSelect.value
+	let encryptedText
 
 	encryptionSelect.addEventListener('change', () => {
 		encryptionOption = encryptionSelect.options[encryptionSelect.selectedIndex].value
 	})
 
-	if (encryptionOption === 'encrypt') {
-		// To create a cipher
+	if (encryptionInput.value && encryptionOption === 'encrypt') {
 		const myCipher = cipher('mySecretSalt')
-
-		// Then cipher any text:
-		const encryptedText = myCipher(encryptionInput.value)
-
-		encryptionOutput.insertAdjacentHTML('beforeend', `<p>${encryptedText}</p>`)
-	}
-
-	if (encryptionOption === 'decrypt') {
-		// To decipher, you need to create a decipher and use it:
+		encryptedText = myCipher(encryptionInput.value)
+	} else {
 		const myDecipher = decipher('mySecretSalt')
-
-		// Decrypt any string
-		const decryptedString = myDecipher(encryptionInput.value)
-
-		console.log(decryptedString)
-
-		encryptionOutput.insertAdjacentHTML('beforeend', `<p>${decryptedString}</p>`)
+		encryptedText = myDecipher(encryptionInput.value)
 	}
+
+	// Update the output string after submit (Once)
+	encryptionOutput.innerHTML = `<p><span>Output</span>: ${encryptedText}</p>`
 })
