@@ -46,7 +46,9 @@ header p {
   position: relative;
   height: 300px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding-top: 3rem;
 }
 
@@ -66,18 +68,63 @@ header p {
   margin-bottom: 1rem;
 }
 
+.encryption .encryption-container {
+  margin-bottom: 2rem;
+}
+
 .encryption .encryption-container,
 .encryption .decryption-container {
-  width: 50%;
+  width: 100%;
   padding: 0 1.5rem;
 }
 
 .encryption input {
-  padding: 1rem 0.5rem;
-  width: 80%;
-  display: block;
+  padding: 1rem 0.75rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 0;
 }
 
 .encryption input:focus {
   outline: none;
+}
+
+.decryption-output {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.decryption-output span {
+  font-weight: bold;
+}
+
+.encryption-output {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.encryption-output span {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+
+  .encryption {
+    flex-direction: row;
+  }
+
+  .encryption .encryption-container {
+    margin-bottom: 0;
+  }
+
+  .encryption .encryption-container,
+  .encryption .decryption-container {
+    width: 50%;
+  }
+
+  .encryption input {
+    width: 80%;
+  }
 }
