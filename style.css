@@ -11,7 +11,7 @@
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  background: #30336b;
+  background: #2980b9;
   color: #FFFDFA;
 }
 
@@ -60,10 +60,9 @@ header p {
 
 
 .encryption-button {
-  padding: 3rem;
-  padding: 1rem 2rem;
+  padding: .5rem 1.5rem;
   font-size: 18px;
   font-weight: bold;
-  background: orange;
+  background: #ecf0f1;
   border: none;
 }
