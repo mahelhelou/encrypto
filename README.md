@@ -4,7 +4,14 @@
 
 ## How it Works?
 
-1. Type the string you want to encrypt to decrypt in the input field.
-2. Select the conversion option, encrypt or decrypt.
-3. Click the button named "Submit".
-4. A generated text below the input will shown, have fun with it!
+### Encrypting the String
+
+1. Type the string you want to encrypt left input field.
+2. The program will print the encrypted text below the filed.
+3. Use the encrypted text for a any purpose.
+
+### Decrypting the String
+
+1. Type the string you want to decrypt right input field.
+2. The program will print the decrypted text below the filed.
+3. Use the encrypted text for a any purpose.
