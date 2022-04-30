@@ -2,9 +2,7 @@
 
 ## About Encrypto
 
-تطبيق Encrypto هو تطبيق برمجي تم إنشاؤه باستخدام لغة جافا سكريبت - JavaScript، وهو يعمل على تشفير النص وفك تشفير النص باستخدام خوارزمية تشفير بسيطة تعمل على ترميز النص باستخدام الأرقام والحروف.
-
-التطبيق مكوّن من عدد 2 من المدخلات - Inputs، بحيث يكون المُدخل الأول لتشفير النص العادي وتحويله لنص مُشفّر يصعب على الشخص العادي فهمه، بينما سهل على لغة البرمجة -أيًا كانت- فهمه من خلال فك التشفير للمُكوّن الأصلي لهذا النص. أما المُدخل الثاني فهو لفك التشفير وإعادة النص المُشفّر للحالة الأصلية، أي النص قبل التشفير.
+Encrypto is a JavaScript software application that encrypts and decrypts the text using a simple encryption algorithm that encodes the text using numbers and letters. This algorithm hides a text in another text. The application consists of 2 inputs. The first entry is to encrypt the plain text and convert it into ciphertext that is difficult for the average person to understand, while it is easy for a programming language, whatever it is, to understand it through decoding the original component of this text. The second input is to decrypt and return the ciphertext to the original state, that is, the text before the encryption. So, the main purpose of the study is to make a new algorithm in order to hide a text in another text. Check the [Live Demo](https://mahelhelou.github.io/mahelhelou) to apply the process of hiding a text in another text!
 
 ## How it Works?
 
